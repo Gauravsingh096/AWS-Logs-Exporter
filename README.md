@@ -1,4 +1,4 @@
-# AWS Lambda Log Manager
+ÿþ# AWS Lambda Log Manager
 
 ## Features
 - One-command log downloads
@@ -34,7 +34,7 @@ Environment setup script
 #>
 
 # Verify AWS CLI
-if (-not (Get-Command aws -ErrorAction SilentlyContinue)) {
+if (-not (Get-Command aws -ErrorAction SilentlyContinue){
     throw "AWS CLI not found. Install from: https://aws.amazon.com/cli/"
 }
 
