@@ -1,4 +1,4 @@
-��# AWS Lambda Log Manager
+# AWS Lambda Log Manager
 
 ## Features
 - One-command log downloads
@@ -12,29 +12,19 @@ powershell
 .\manage_logs.ps1
 
 # Custom settings
-.\manage_logs.ps1 -LogGroup "/aws/lambda/OtherFunction" -RetentionDays 30 `
+.\manage_logs.ps1 -LogGroup "/aws/lambda/OtherFunction" -RetentionDays 30
 
-Requirements
-AWS CLI configured
 
-PowerShell 5.1+
-
-Log files
-aws-logs-*.txt
-
-AWS credentials
-*.aws/credentials
-
+### 3. `.gitignore`
 
 ### 4. `setup.ps1` (Optional Initialization)
-powershell
 <#
 .SYNOPSIS
 Environment setup script
 #>
 
 # Verify AWS CLI
-if (-not (Get-Command aws -ErrorAction SilentlyContinue){
+if (-not (Get-Command aws -ErrorAction SilentlyContinue)) {
     throw "AWS CLI not found. Install from: https://aws.amazon.com/cli/"
 }
 
@@ -51,16 +41,6 @@ aws-lambda-log-manager/
 ├── .gitignore         # Ignore logs/credentials
 └── setup.ps1          # Bootstrap script (optional)
 
-Key Features:
-Parameterized Input - Customize via command-line args
-
-Error Handling - Graceful failure with colored output
-
-Clean Architecture - Regions for easy maintenance
-
-Safety Checks - File validation before operations
-
-Documentation - Embedded help and README
 
 To use:
 
@@ -68,6 +48,6 @@ Clone repo
 
 Run .\setup.ps1 (if needed)
 
-## Execute .\manage_logs.ps1
+Execute .\manage_logs.ps1
 
 
